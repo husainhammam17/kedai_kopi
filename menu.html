@@ -140,16 +140,20 @@
       <!-- category section -->
       <section class="category" id="category">
         <div class="choice-category">
-          <a href="#" id="coffee" onclick="loadContent('menu-coffee.html')">
+          <a
+            href="#coffee"
+            id="coffee"
+            onclick="loadContent('menu-coffee.html')"
+          >
             <img
               src="./public/assets/img/kopi/coffee-cup.png"
               alt="coffee_menu"
             />
           </a>
-          <a href="#" id="cake" onclick="loadContent('menu-cake.html')">
+          <a href="#cake" id="cake" onclick="loadContent('menu-cake.html')">
             <img src="./public/assets/img/kopi/croissant.png" alt="cake_menu" />
           </a>
-          <a href="#" id="juice" onclick="loadContent('menu-juice.html')">
+          <a href="#juice" id="juice" onclick="loadContent('menu-juice.html')">
             <img
               src="./public/assets/img/kopi/orange-juice.png"
               alt="juice_menu"
@@ -205,7 +209,7 @@
             src="./public/assets/img/kopi/menu-coffee/iced-caramel-macchiato.jpg"
             alt="coffee"
           />
-          <h2>Iced Caramel Macchiato</h2>
+          <h2>Iced Caramel <br />Macchiato</h2>
           <div class="price">Rp 15.000</div>
         </div>
         <div class="menucard" id="menucard" data-name="m-7">
@@ -531,21 +535,5 @@
     <!-- custom js link -->
     <script src="./scripts/script.js"></script>
     <script src="./scripts/menu.js"></script>
-
-    <script>
-      // function untuk beralih menu-category
-      function loadContent(url) {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState == 4 && xhr.status == 200) {
-            document.getElementById("menu").innerHTML = xhr.responseText;
-          } else if (xhr.readyState == 4 && xhr.status != 200) {
-            document.getElementById("menu").innerHTML = "Gagal memuat menu.";
-          }
-        };
-        xhr.open("GET", url, true);
-        xhr.send();
-      }
-    </script>
   </body>
 </html>

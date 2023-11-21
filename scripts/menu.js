@@ -51,3 +51,16 @@ window.onclick = (e) => {
     }
 }
 
+// function untuk beralih menu-category
+function loadContent(url) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("menu").innerHTML = xhr.responseText;
+        } else if (xhr.readyState == 4 && xhr.status != 200) {
+            document.getElementById("menu").innerHTML = "Gagal memuat menu.";
+        }
+    };
+    xhr.open("GET", url, true);
+    xhr.send();
+}
